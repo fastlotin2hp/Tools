@@ -1,3 +1,4 @@
+#!/bin/bash
 #  introduction
 
   ## reviewing Bash
@@ -22,4 +23,13 @@
    - **grep file.txt | awk {'print $2'}** only show the 2nd item from the pint out line
    - **ping abc.com |awk {'print $2'}**
    - **ping abc.com |cut -d= -f 4** delimiater on field 4 
-    
+   
+# Building Bash Script
+  ## echo 
+  ```bash
+     greeting="hello"
+   - **echo \(hello\)** ( or ) special symbol needs \ before it to display
+   - **echo '$greeting\(hello\)'** print out $greeting(hello)
+   - **echo "\$greeting\(hello\)"** print out $greeting(hello)
+   - **echo "$greeting\(hello\)"** print out hello(hello)
+  ```
