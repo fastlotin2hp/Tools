@@ -46,8 +46,29 @@
    -**echo $0** return the name of the script
   ## 2.3 substitution
    ```bash
-   a=$(ping abc.com |cut -d= -f 4)
-   echo "The ping was $a"
+    a=$(ping abc.com |cut -d= -f 4)
+    echo "The ping was $a"
+   ```
+  ## 2.4 numbers
+   ```bash
+    val=$((expression))  d=2 e=$((d+2))
+   
+    -- primary use
+    $a ** $b    exponentiation
+    $a * $b     Multiplication
+    $a / $b     division
+    $a % $b     modulo
+    $a + $b     addition
+    $a - $b     subtraction
+    
+    -- also able to use
+    echo $e
+    ((e++)) ,((e--)), ((e+=5)), ((e*=3))
+    echo $e
+    **NOTE e+=5** is a string operation e==>"4"+"5"==>"45" ,is not a number 
+    
+    float=$((1/3))             is 0
+    float=$(echo 1/3 | bc -l)  too get the float point 
    ```
    
    
