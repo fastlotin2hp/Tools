@@ -44,6 +44,11 @@
    -**$BASH_VERSION**
    -**$SECONDS** seconds bash session has been run (in the scrpit it star from zero)
    -**echo $0** return the name of the script
+  ## 2.3 substitution
+   ```bash
+   a=$(ping abc.com |cut -d= -f 4)
+   echo "The ping was $a"
+   ```
    
    
    
