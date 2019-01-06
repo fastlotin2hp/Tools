@@ -1,6 +1,5 @@
-#!/bin/bash
 #  introduction
-
+ 
   ## reviewing Bash
    - **cat head tail more** *.txt
   ## Tilde and Brace
