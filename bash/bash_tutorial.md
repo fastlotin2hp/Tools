@@ -50,18 +50,19 @@
     echo "The ping was $a"
    ```
   ## 2.4 numbers
-   ```bash
-    val=$((expression))  d=2 e=$((d+2))
+   val=$(( expression ))  d=2 e=$((d+2))
    
-    -- primary use
+   - primary use
+   ```bash
     $a ** $b    exponentiation
     $a * $b     Multiplication
     $a / $b     division
     $a % $b     modulo
     $a + $b     addition
     $a - $b     subtraction
-    
-    -- also able to use
+   ```
+   - also able to use
+   ```bash
     echo $e
     ((e++)) ,((e--)), ((e+=5)), ((e*=3))
     echo $e
@@ -70,9 +71,43 @@
     float=$((1/3))             is 0
     float=$(echo 1/3 | bc -l)  too get the float point 
    ```
+  ## 2.5 comparing values
+    [[ expression ]] return 1/0 False/True
+   - for char comparasion
+   ```bash
+   [[$a <  $b]]  less    than
+   [[$a >  $b]]  greater than
+   [[$a <= $b]]  less    than or equal to
+   [[$a >= $b]]  greater than or equal to
+   [[$a == $b]]                  equal
+   [[$a != $b]]              not equal
+   ```
+   - for number comparasion
+   ```bash
+   [[$a -lt  $b]]  less    than
+   [[$a -gt  $b]]  greater than
+   [[$a -le $b]]  less    than or equal to
+   [[$a -ge $b]]  greater than or equal to
+   [[$a -eq $b]]                  equal
+   [[$a -ne $b]]              not equal
+   ```
+   - logic operations
+   ```bash
+   [[$a &&  $b]]  AND
+   [[$a ||  $b]]  OR 
+   [[$a ! $b]]    NOT
    
+   [[-z $a]]  is     null ?    
+   [[-n $a]]  if not null ?
+   ```
    
-   
+   - to use
+   ```bash
+   [["cat"=="cat"]] 
+   echo $?
+   [[20 -gt 100]]
+   echo $?
+   ```
    
    
    
