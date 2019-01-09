@@ -1,0 +1,9 @@
+1. to run tensorboard
+
+$ tensorboard --logdir=05/logs
+---- at http://------  copy the http://---- to browser
+
+2. then
+
+
+https://www.instructables.com/id/Analog-Noise-Cancelling-Headphones/
