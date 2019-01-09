@@ -1,47 +1,46 @@
-# 8 loging
-  git log shorten_title --oneline -3
-  git log --graph --oneline --decorate --all
-  
+# 8. loging
+  - git log shorten_title --oneline -3
+  - git log --graph --oneline --decorate --all  
 # 9 commite
-  git show HEAD
+    git show HEAD
   
 
 # 10 Branch
-  cat .git/HEAD 
-  cat -la .git/refs/heads
-  cat -la .git/refs/heads/master ==> return a sha of the HEAD
+    cat .git/HEAD 
+    cat -la .git/refs/heads
+    cat -la .git/refs/heads/master ==> return a sha of the HEAD
   
-  git branch 
+    git branch 
             --branch_name >>to create a new branch
               
-  git checkout [branch or file]
+    git checkout [branch or file]
                new_branch 
                -b new_branch >> create and switch to new branch at the same time
                
-  --compare branches
-    git diff master..new_branch 
-    git diff --color-words master..new_branch
-    git diff --color-words master..new_branch^
-    git diff --color-words master..new_branch~3
+   --compare branches
+      git diff master..new_branch 
+      git diff --color-words master..new_branch
+      git diff --color-words master..new_branch^
+      git diff --color-words master..new_branch~3
   
   --if one branch totally contain others
     git branch --merged
     
   --rename branch
-    git branch -m     new_branch descriptive_branch_name
-    git branch --move new_branch descriptive_branch_name
+     git branch -m     new_branch descriptive_branch_name
+     git branch --move new_branch descriptive_branch_name
     
   --delete branch
     git branch -d       new_branch
                --delete new_branch
                
 # 11 Merging 
-  git merge new_branch
-  git merge --no-ff branch [force to not use fast-forward merge]
-  git merge --ff-only branch [only use fast-forward if possible,othrewise abort]
-  git merge --abort
+    git merge new_branch
+    git merge --no-ff branch [force to not use fast-forward merge]
+    git merge --ff-only branch [only use fast-forward if possible,othrewise abort]
+    git merge --abort
   
-  git mregetool [for the third party merging tool]
+    git mregetool [for the third party merging tool]
   
 # 12 stash 
     git stash save "save temp change"
@@ -56,5 +55,9 @@
       git stash clear [remove all stashes]
 
 # appendix show the current branch
+  ```bash
   export ps1='\W$(__git_ps1 "(%s)" > )'
   export ps1='$(__git_ps1 "(%s)" > )'
+  ```
+# a-1 Basic writing and formatting syntax
+  https://help.github.com/articles/basic-writing-and-formatting-syntax/
