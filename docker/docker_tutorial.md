@@ -4,7 +4,7 @@ docker info
 docker ps --format $FORMAT 
 docker tag //to change name
 
---examples
+# examples
   docker run -ti ubuntu bash -c "sleep 3; echo call done"
   //leaving things in container
     docker run -d -ti ubuntu bash -c "sleep 3; echo call done"
@@ -19,20 +19,20 @@ docker tag //to change name
     docker run --memory
     docker run --cpu-shares
                 --cpu-quota
---templete                
-docker run -ti //human interactive
+# templete                
+   docker run -ti //human interactive
            -rm //clean up container when it's done
            --name give container a name
            
---Inside container:
+# Inside container:
     exit or ctrl+D to exit
     ctrl+p then ctrl+q to detach (docker attach cntainer_name to get back to the container)
     
---non root user :
+# non root user :
   sudo groupadd docker
   sudo usermod -aG docker $USER
   
---dockers communication via ports
+# dockers communication via ports
   docker run -p inside-port:outside-port(/TCP or /UCP -p 45679:45679==-p 45679:45679/TCP -p 45679:45679/UDP)
   docker run --rm -ti -p 45678:45678 -p 45679:45679 --name echo-server ubuntu:14.04 bash
   //netcat example
