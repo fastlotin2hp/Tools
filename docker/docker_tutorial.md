@@ -5,6 +5,7 @@ docker ps --format $FORMAT
 docker tag //to change name
 
 # examples
+
   docker run -ti ubuntu bash -c "sleep 3; echo call done"
   //leaving things in container
     docker run -d -ti ubuntu bash -c "sleep 3; echo call done"
@@ -35,6 +36,7 @@ docker tag //to change name
   sudo usermod -aG docker $USER
   
 # dockers communication via ports
+
   docker run -p inside-port:outside-port(/TCP or /UCP -p 45679:45679==-p 45679:45679/TCP -p 45679:45679/UDP)
   docker run --rm -ti -p 45678:45678 -p 45679:45679 --name echo-server ubuntu:14.04 bash
   //netcat example
@@ -62,6 +64,19 @@ docker tag //to change name
   docker run too-big
   docker run google-size
   
+  ```
+# sharing data between containers
+  they inherit one to another until last container ended
+  ```bash
+  #container 1 (container_name1)
+  docker run -ti -v /share-data ubuntu bash 
+    echo hello > /share-data/data_file
+  
+  #container 2
+  docker ps -l
+  docker run -ti --volumes-from container_name1(container's name(container 1) ubuntu bash
+    ls /share-data/
+    echo more > /shared-data/data_file2 
   ```
   
 # under the hood
