@@ -19,6 +19,8 @@ docker tag //to change name
     docker run --memory
     docker run --cpu-shares
                 --cpu-quota
+  //reaction if docker die
+    docker run --restart always
 # templete                
    docker run -ti //human interactive
            -rm //clean up container when it's done
@@ -40,5 +42,36 @@ docker tag //to change name
   terminal 2: nc localhost 45678 (or nc 10.35.3.24 45678)
   terminal 3: nc localhost 45679
   docker port echo-server
- 
+  
+# building docker images
+  multi-project Docker files
+  --multi stage build
+  ```dockerfile
+  FROM ubuntu:16.04 as builder
+  RUN apt-get update
+  RUn apt-get -y install curl
+  RUN curl https://google.com |wc -c > google-size
+  
+  FROM alpine
+  COPY --from=builder /google-size /google-size
+  ENTRYPOINT echo google is this big; cat google-size
+  ```
+  docker build -t too-big .
+  docker build -t google-size .
+  ```
+  docker run too-big
+  docker run google-size
+  
+  ```
+  
+# under the hood
+  acronym
+  
+# aws fargate
+# aws EKS
+# kubernetes engine
+  
+  
+  
+  
   
