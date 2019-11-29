@@ -1,3 +1,33 @@
+# 1. git configuration
+  git --version
+  git config --help
+  git config --global user.name "first_name last_name"
+  git config --global user.email.com "abc@de.com"
+  
+  // show the all configs
+  git config --list
+  
+# 2. git init
+  to create .git directory
+  
+  to remove the git , under that directory
+    
+    ```bash 
+    rm -rf .git
+    ```
+    - .gitignore file
+    
+    ```bash
+    touch .gitignore
+    ```
+# 3. git add
+    
+    //add all to stage.
+    ```bash 
+    git add -A
+    ```
+# 3. git reset
+
 # 8. loging
   - git log shorten_title --oneline -3
   - git log --graph --oneline --decorate --all  
