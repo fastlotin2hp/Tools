@@ -8,25 +8,64 @@
   git config --list
   
 # 2. git init
-  to create .git directory
+to create .git directory
   
-  to remove the git , under that directory
-    
-    ```bash 
-    rm -rf .git
-    ```
-    - .gitignore file
-    
-    ```bash
-    touch .gitignore
-    ```
+to remove the git , under that directory 
+  ```bash 
+  rm -rf .git
+  ```
+.gitignore file    
+  ```bash
+  touch .gitignore
+  ```
+
 # 3. git add
     
-    //add all to stage.
-    ```bash 
-    git add -A
-    ```
+//add all to stage.
+  ```bash 
+  git add -A
+  ```
 # 3. git reset
+
+  unstage sepcific file
+  ```bash 
+  git reset file_name
+  ```
+  unstage all file
+  
+  ```bash 
+  git reset
+  ```
+  
+# 4. git commit
+
+  unstage sepcific file
+  
+  ```bash 
+  git commit -m "comments"
+  ```
+
+# 5. git clone
+
+  ```bash 
+  git clone <url> <dir>
+  ```
+  clone locally
+  
+  ```bash 
+  git clone ../remote_repo.git .
+  ```
+  
+ # 5. git pull/push
+
+  pull
+  ```bash 
+  git pull original master
+  ```
+  push
+  ```bash 
+  git push original master
+  ```
 
 # 8. loging
   - git log shorten_title --oneline -3
@@ -64,6 +103,11 @@
     git branch -d       new_branch
                --delete new_branch
                
+  delete the remote branch  
+  ```bash 
+  git push origin --delete branch_name               
+  ``` 
+            
 # 11 Merging 
     git merge new_branch
     git merge --no-ff branch [force to not use fast-forward merge]
