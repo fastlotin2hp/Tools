@@ -127,6 +127,63 @@ to remove the git , under that directory
   --delet stashed file
       git stash drop stash@{0}
       git stash clear [remove all stashes]
+      
+      
+# Advance-1 
+## amend
+amend the commit comments
+  ```bash 
+  git commit --ammend -m "the correct message is..."
+  ```
+amend the new file to current commit 
+(assume file.txt is new,and want to be in the last commit)
+  ```bash 
+  git commit --ammend 
+  git log --stat   (to see the change of the commit)
+  ```
+## cherry-pick
+create a new commit base of our original
+  ```bash 
+  git cherry-pick <hash_from_other_branch>
+  ```
+## rest
+soft/mix(default)/hard
+  ```bash 
+  git rest --soft <hash>     still keeps files before commit 
+  git rest  <hash>           still in stagging with track files
+  git rest --hard <hash>     nothing in stage and ignoring untrack files
+  
+  git clean -df  (get rid of, d  untracked directory, f untracked files)
+  
+  git reflog  (life-saver,still keeping last few days commits,pick the "lost-by-reset" commit back)
+  ```
+## revert 
+for those commit into master and people already pull it.which should not be reset.
+  ```bash 
+  git revert <hash>
+  
+  git diff <hash_second_last> <hash_last>
+  ```
+## stash 
+ put code aside and come back to handle it later
+  ```bash 
+  git stash save "comments"
+  git stash list 
+  
+  git stash apply stash@{0}   (not removing the stash)
+  or
+  git stash pop   (stash@{0} will be removed)
+  
+  git stash drop stash@{1} 
+  git stash clear (remove all stash)
+  ```
+## checkout 
+ get back to a version
+  ```bash 
+  git checkout -- .  (back to the last change)
+
+
+  ```
 
 # appendix show the current branch
   ```bash
