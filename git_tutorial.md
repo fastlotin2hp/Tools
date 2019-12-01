@@ -185,10 +185,17 @@ for those commit into master and people already pull it.which should not be rese
 
   ```
 
-# appendix show the current branch
+# appendix-A show the current branch
   ```bash
   export ps1='\W$(__git_ps1 "(%s)" > )'
   export ps1='$(__git_ps1 "(%s)" > )'
   ```
+# appendix-B git 3rd tools
+## diffmerge
+```bash
+git difftool
+git mergetool
+```
+
 # a-1 Basic writing and formatting syntax
   https://help.github.com/articles/basic-writing-and-formatting-syntax/
